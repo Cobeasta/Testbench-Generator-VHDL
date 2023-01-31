@@ -7,8 +7,7 @@
 
 -- <File_Name>
 -------------------------------------------------------------------------
--- DESCRIPTION: This file contains a simple VHDL testbench for the
--- edge-triggered flip-flop with parallel access and reset.
+-- DESCRIPTION:<Description>
 --
 --
 -- <Notes>
