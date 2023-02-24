@@ -1,44 +1,46 @@
 -----------------------------------------------------------------------
--- <Writers_Name>
+-- Coby Konkol
 -- Department of Electrical and Computer Engineering
 -- Iowa State University
 -------------------------------------------------------------------------
 
 
--- <File_Name>
+-- test.vhd
 -------------------------------------------------------------------------
--- DESCRIPTION:<Description>
+-- DESCRIPTION:Description
 --
 --
--- <Notes>
+-- Notes
 -----------------------------------------------------------------------
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity <test_bench_name> is
+entity tb_comp is
   generic(gCLK_HPER   : time := 50 ns);
-end <test_bench_name>;
+end tb_comp;
 
-architecture behavior of <test_bench_name> is
+architecture behavior of tb_comp is
   
   -- Calculate the clock period as twice the half-period
   constant cCLK_PER  : time := gCLK_HPER * 2;
 
 
-  component <dut_component_name>
-    port(<INPUTS>
-
+  component comp
+    port(i_d0: std_logic);
+);   -- Data value output
   end component;
 
   -- Temporary signals to connect to the dff component.
   signal s_CLK, s_RST, s_WE  : std_logic;
 
-  <SIGNALS>
+  signal s_id0: std_logic := '0';
+
+
 
 begin
 
-  DUT: <dut_component_name> 
+  DUT: comp 
   port map(<dut_port_mapping>);
 
   -- This process sets the clock value (low for gCLK_HPER, then high

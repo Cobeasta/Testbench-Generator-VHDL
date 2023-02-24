@@ -1,0 +1,5 @@
+* Need to add in outputs and formatting
+* Add in on component declarations 
+* in testbench component, remove extra ); in template file
+* signal appended to beginnning of signals not signal lines
+* fill out dut_port_mappings

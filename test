@@ -16,29 +16,31 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity <test_bench_name> is
+entity tb_test is
   generic(gCLK_HPER   : time := 50 ns);
-end <test_bench_name>;
+end tb_test;
 
-architecture behavior of <test_bench_name> is
+architecture behavior of tb_test is
   
   -- Calculate the clock period as twice the half-period
   constant cCLK_PER  : time := gCLK_HPER * 2;
 
 
-  component <dut_component_name>
-    port(<INPUTS>
-
+  component test
+    port(i_comp: integer);
+);   -- Data value output
   end component;
 
   -- Temporary signals to connect to the dff component.
   signal s_CLK, s_RST, s_WE  : std_logic;
 
-  <SIGNALS>
+  signal s_icomp: integer := 24;
+
+
 
 begin
 
-  DUT: <dut_component_name> 
+  DUT: test 
   port map(<dut_port_mapping>);
 
   -- This process sets the clock value (low for gCLK_HPER, then high
