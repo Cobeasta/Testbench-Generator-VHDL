@@ -27,7 +27,7 @@ architecture behavior of <test_bench_name> is
 
 
   component <dut_component_name>
-    port(<INPUTS>
+    port(<PORTS>
 
   end component;
 
